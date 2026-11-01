@@ -1,0 +1,347 @@
+{
+  "users": [
+    {
+      "_id": "654321000000000000000001",
+      "id": "654321000000000000000001",
+      "name": "Super Admin",
+      "email": "admin@cryptoconnect.app",
+      "password": "$2a$10$gp9X6UlP3bDV6qCe26u6luvscEJnHhvwu17QpzP3ySMESjE9GgX.e",
+      "phoneNumber": "+225 07 00 00 00 00",
+      "languagePreference": "fr",
+      "emailVerified": true,
+      "identityVerificationStatus": "verified",
+      "accountStatus": "active",
+      "authProvider": "local",
+      "role": "super_admin",
+      "refreshTokens": [
+        {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDMyMTAwMDAwMDAwMDAwMDAwMDAwMSIsImlhdCI6MTc5MzU3Mjg4MywiZXhwIjoxNzk0MTc3NjgzfQ.pftliEJoYi3MMJ1VDPIEMSRZGnQ_f4SNQupXz6HM0xc",
+          "createdAt": "2026-11-01T22:41:23.023Z"
+        },
+        {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDMyMTAwMDAwMDAwMDAwMDAwMDAwMSIsImlhdCI6MTc5MzU3MjkxNiwiZXhwIjoxNzk0MTc3NzE2fQ.-8yiTopF7oucJ5NgPH7L0FkK_O42ZnFAKRhFMB_4NnU",
+          "createdAt": "2026-11-01T22:41:56.328Z"
+        },
+        {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDMyMTAwMDAwMDAwMDAwMDAwMDAwMSIsImlhdCI6MTc5MzU3MzM0NiwiZXhwIjoxNzk0MTc4MTQ2fQ.hSEQwmsPgAT-zKQ2GhA5aNcma8SxxRBNpigT8Nu08YY",
+          "createdAt": "2026-11-01T22:49:06.896Z"
+        },
+        {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDMyMTAwMDAwMDAwMDAwMDAwMDAwMSIsImlhdCI6MTc5MzU3MzUwNywiZXhwIjoxNzk0MTc4MzA3fQ.Iw-uctOb_yByqiPcQWyCMKG7NZs2mkpGb0NtoprOZrU",
+          "createdAt": "2026-11-01T22:51:47.984Z"
+        }
+      ],
+      "createdAt": "2026-01-01T08:00:00.000Z"
+    },
+    {
+      "_id": "654321000000000000000002",
+      "id": "654321000000000000000002",
+      "name": "Kouassi Alain",
+      "email": "kouassi@email.com",
+      "password": "$2a$10$N5LTT2Cpvtl8Bz4Pej/eKe3EXORkSxR.EBGfLB6/i0ZSOenMkLxcu",
+      "phoneNumber": "+225 07 12 34 56 78",
+      "languagePreference": "fr",
+      "emailVerified": true,
+      "identityVerificationStatus": "verified",
+      "accountStatus": "active",
+      "authProvider": "local",
+      "role": "user",
+      "refreshTokens": [
+        {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDMyMTAwMDAwMDAwMDAwMDAwMDAwMiIsImlhdCI6MTc5MzU3Mjg4MiwiZXhwIjoxNzk0MTc3NjgyfQ.jJul30H-T-_T7m0ZroUZQ5RyfQl9n6pNyvHumBdDAWE",
+          "createdAt": "2026-11-01T22:41:22.747Z"
+        },
+        {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDMyMTAwMDAwMDAwMDAwMDAwMDAwMiIsImlhdCI6MTc5MzU3MjkxNiwiZXhwIjoxNzk0MTc3NzE2fQ.WaQw6dEksTr9R9NwTi34T4DL4oN5YOU315fpLY4C7bo",
+          "createdAt": "2026-11-01T22:41:56.131Z"
+        },
+        {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDMyMTAwMDAwMDAwMDAwMDAwMDAwMiIsImlhdCI6MTc5MzU3MzQ1OCwiZXhwIjoxNzk0MTc4MjU4fQ.v9b9dovA-dJco1KXY1enz4PZJhqgtVdGzzDn-IVAPTw",
+          "createdAt": "2026-11-01T22:50:58.137Z"
+        }
+      ],
+      "createdAt": "2026-01-15T10:30:00.000Z"
+    },
+    {
+      "_id": "654321000000000000000003",
+      "id": "654321000000000000000003",
+      "name": "Marie Dupont",
+      "email": "marie@email.com",
+      "password": "$2a$10$N5LTT2Cpvtl8Bz4Pej/eKe3EXORkSxR.EBGfLB6/i0ZSOenMkLxcu",
+      "phoneNumber": "+225 07 23 45 67 89",
+      "languagePreference": "fr",
+      "emailVerified": true,
+      "identityVerificationStatus": "pending",
+      "accountStatus": "suspended",
+      "authProvider": "local",
+      "role": "user",
+      "refreshTokens": [],
+      "createdAt": "2026-02-01T14:20:00.000Z",
+      "updatedAt": "2026-11-01T22:52:21.558Z"
+    }
+  ],
+  "services": [
+    {
+      "_id": "srv_001",
+      "id": "srv_001",
+      "slug": "achat-vente",
+      "name": "Achat & Vente de cryptomonnaies",
+      "summary": "Achetez et vendez vos cryptos en toute sécurité et simplicité.",
+      "description": "Accédez à une plateforme d'échange fluide et sécurisée. Achetez du Bitcoin, Ethereum, USDT et plus de 50 autres actifs avec vos moyens de paiement favoris : Mobile Money (Wave, Orange, MTN, Moov) et Carte Bancaire.",
+      "benefits": [
+        "Taux compétitifs et transparents en temps réel",
+        "Compatibilité Mobile Money (Orange, Wave, MTN, Moov) & Carte Bancaire",
+        "Transactions instantanées sans frais cachés",
+        "Sécurisation des transferts via cold storage"
+      ],
+      "accessSteps": [
+        "Créez et validez votre compte CryptoConnect",
+        "Sélectionnez la cryptomonnaie et le montant souhaité",
+        "Choisissez votre mode de paiement instantané",
+        "Recevez vos cryptos directement sur votre portefeuille sécurisé"
+      ],
+      "icon": "swap",
+      "color": "#3B82F6",
+      "requiresIdentityVerification": true,
+      "isActive": true,
+      "displayOrder": 1
+    },
+    {
+      "_id": "srv_002",
+      "id": "srv_002",
+      "slug": "investissement",
+      "name": "Investissement & placements",
+      "summary": "Faites fructifier votre capital avec des solutions adaptées.",
+      "description": "Découvrez nos solutions de staking institutionnel, de plans d'épargne automatique (DCA) et de gestion de portefeuille clé en main gérés par des analystes professionnels.",
+      "benefits": [
+        "Plans d'épargne programmée (DCA) dès 10 000 FCFA / 15 €",
+        "Rendements d'épargne crypto (Staking & Yield) jusqu'à 8.5% APY",
+        "Rapports d'analyse et de performance hebdomadaires",
+        "Protection du capital avec gestion active des risques"
+      ],
+      "accessSteps": [
+        "Définissez vos objectifs d'épargne et votre profil de risque",
+        "Sélectionnez le plan d'investissement recommandé",
+        "Programmez vos dépôts périodiques automatiques",
+        "Suivez l'évolution de vos rendements en direct sur l'application"
+      ],
+      "icon": "trending-up",
+      "color": "#10B981",
+      "requiresIdentityVerification": true,
+      "isActive": true,
+      "displayOrder": 2
+    },
+    {
+      "_id": "srv_003",
+      "id": "srv_003",
+      "slug": "formation",
+      "name": "Formation & accompagnement",
+      "summary": "Apprenez à votre rythme, du débutant à l'expert.",
+      "description": "Maîtrisez la finance décentralisée, l'analyse de marché et la sécurisation d'actifs. Nos programmes certifiants vous guident pas à pas pour devenir un investisseur autonome et serein.",
+      "benefits": [
+        "Parcours pédagogiques interactifs certifiés",
+        "Ateliers live hebdomadaires et webinaires exclusifs",
+        "Mentorat individuel 1-on-1 avec des traders expérimentés",
+        "Accès à notre canal privé d'analyses de marché"
+      ],
+      "accessSteps": [
+        "Évaluez votre niveau avec notre test initial rapide",
+        "Choisissez votre parcours (Débutant, Intermédiaire, Trader Pro)",
+        "Suivez les cours vidéo et validez vos acquis",
+        "Obtenez votre certificat officiel CryptoConnect"
+      ],
+      "icon": "academic",
+      "color": "#8B5CF6",
+      "requiresIdentityVerification": false,
+      "isActive": true,
+      "displayOrder": 3
+    },
+    {
+      "_id": "srv_004",
+      "id": "srv_004",
+      "slug": "conseil-support",
+      "name": "Conseil & support personnalisé",
+      "summary": "Une équipe à votre écoute pour répondre à toutes vos questions.",
+      "description": "Bénéficiez d'un conseiller dédié pour auditer la sécurité de vos portefeuilles, résoudre vos incidents techniques et vous orienter lors de vos décisions d'investissement importantes.",
+      "benefits": [
+        "Conseiller dédié joignable 7j/7 via WhatsApp, téléphone ou visio",
+        "Audit de sécurité complet de vos portefeuilles personnels",
+        "Assistance immédiate lors de transferts importants",
+        "Conseils personnalisés conformes aux régulations en vigueur"
+      ],
+      "accessSteps": [
+        "Réservez un créneau d'échange avec un expert",
+        "Exposez votre projet ou votre demande spécifique",
+        "Recevez une feuille de route claire et actionnable"
+      ],
+      "icon": "headphones",
+      "color": "#F59E0B",
+      "requiresIdentityVerification": false,
+      "isActive": true,
+      "displayOrder": 4
+    }
+  ],
+  "contents": [
+    {
+      "_id": "cnt_001",
+      "id": "cnt_001",
+      "title": "Qu'est-ce que le Bitcoin ?",
+      "slug": "qu-est-ce-que-le-bitcoin",
+      "contentType": "article",
+      "difficultyLevel": "beginner",
+      "difficultyLabel": "Débutant",
+      "excerpt": "Découvrez les bases indispensables de la première monnaie décentralisée au monde.",
+      "coverImageUrl": "assets/images/bitcoin_3d.jpg",
+      "readingTime": "4 min",
+      "tags": [
+        "bitcoin",
+        "débutant",
+        "crypto",
+        "blockchain"
+      ],
+      "summaryPoints": [
+        "Une monnaie numérique peer-to-peer créée en 2009 par Satoshi Nakamoto",
+        "Décentralisée : fonctionne sans intermédiaire bancaire ni banque centrale",
+        "Sécurisée par la cryptographie et un réseau de nœuds inviolable",
+        "Offre limitée mathématiquement à 21 millions d'unités maximales"
+      ],
+      "body": "Le Bitcoin (BTC) est la première monnaie numérique décentralisée au monde. Conçu en 2008 et lancé en janvier 2009 sous le pseudonyme de Satoshi Nakamoto, il introduit une rupture technologique majeure : la possibilité de transférer de la valeur de pair-à-pair à travers Internet, sans dépendre d'une banque centrale, d'un gouvernement ou d'une institution financière.\n\nLe réseau Bitcoin s'appuie sur une base de données distribuée appelée blockchain, où chaque transaction est vérifiée par des nœuds indépendants et scellée par la preuve de travail (Proof-of-Work). La rareté mathématique garantie à 21 millions d'unités en fait souvent une réserve de valeur numérique, surnommée « l'or digital ».",
+      "isPublished": true,
+      "publishedAt": "2026-01-10T09:00:00.000Z",
+      "views": 1420
+    },
+    {
+      "_id": "cnt_002",
+      "id": "cnt_002",
+      "title": "Comprendre Ethereum & les Smart Contracts",
+      "slug": "comprendre-ethereum-smart-contracts",
+      "contentType": "article",
+      "difficultyLevel": "intermediate",
+      "difficultyLabel": "Intermédiaire",
+      "excerpt": "Explorez la plateforme programmable qui propulse la finance décentralisée (DeFi) et les NFTs.",
+      "coverImageUrl": "assets/images/ethereum_3d.jpg",
+      "readingTime": "6 min",
+      "tags": [
+        "ethereum",
+        "smart contracts",
+        "defi",
+        "intermédiaire"
+      ],
+      "summaryPoints": [
+        "Ethereum est un ordinateur mondial décentralisé permettant d'exécuter du code autonome",
+        "Les Smart Contracts (contrats intelligents) s'exécutent automatiquement sans intermédiaire",
+        "Propulse l'écosystème de la DeFi : prêts, échanges décentralisés et rendements automatisés",
+        "Transition réussie vers le Proof-of-Stake réduisant la consommation énergétique de 99.9%"
+      ],
+      "body": "Lancé en 2015 par Vitalik Buterin, Ethereum dépasse la simple fonction monétaire en devenant une véritable plateforme de calcul décentralisée. Grâce à sa machine virtuelle (EVM), Ethereum permet aux développeurs de déployer des applications décentralisées (dApps) régies par des contrats intelligents (smart contracts).\n\nCes contrats s'exécutent de manière infalsifiable dès que les conditions prédéfinies sont remplies, ouvrant la voie à des systèmes financiers ouverts, transparents et accessibles 24h/24 sans nécessiter de banques traditionnelles.",
+      "isPublished": true,
+      "publishedAt": "2026-01-18T14:00:00.000Z",
+      "views": 980
+    },
+    {
+      "_id": "cnt_003",
+      "id": "cnt_003",
+      "title": "Sécuriser vos cryptomonnaies : Wallets & Bonnes Pratiques",
+      "slug": "securiser-vos-cryptos-wallets-bonnes-pratiques",
+      "contentType": "guide",
+      "difficultyLevel": "advanced",
+      "difficultyLabel": "Avancé",
+      "excerpt": "Guide complet pour stocker vos actifs en toute sécurité avec les cold wallets et éviter les arnaques.",
+      "coverImageUrl": "assets/images/bitcoin_3d.jpg",
+      "readingTime": "8 min",
+      "tags": [
+        "sécurité",
+        "wallets",
+        "ledger",
+        "clés privées",
+        "avancé"
+      ],
+      "summaryPoints": [
+        "La phrase de récupération (Seed Phrase de 12 ou 24 mots) est l'unique clé de vos fonds",
+        "Différence fondamentale entre Hot Wallet (connecté) et Cold Wallet (portefeuille physique hors-ligne)",
+        "Ne partagez jamais vos clés privées, même avec un support se prétendant officiel",
+        "Activez systématiquement la double authentification (2FA) par application (Google Authenticator)"
+      ],
+      "body": "« Not your keys, not your coins » est l'adage fondamental du monde crypto. Posséder des cryptomonnaies implique une responsabilité directe sur la sécurisation de vos clés privées.\n\nPour une sécurité maximale, l'usage d'un portefeuille matériel (Hardware Wallet comme Ledger ou Trezor) est fortement recommandé pour toute somme significative. Ce guide vous détaille la gestion sécurisée des sauvegardes physiques sur plaque métallique, les précautions contre le phishing et la configuration optimale d'un portefeuille multi-signatures.",
+      "isPublished": true,
+      "publishedAt": "2026-02-05T11:00:00.000Z",
+      "views": 750
+    }
+  ],
+  "requests": [
+    {
+      "_id": "654321000000000000000012",
+      "id": "REQ-2026-003104",
+      "requestId": "REQ-2026-003104",
+      "user": "654321000000000000000003",
+      "requestType": "support",
+      "serviceName": "Formation & accompagnement",
+      "subject": "Inscription au webinaire d'analyse technique",
+      "description": "Je souhaite m'inscrire à la prochaine session live de formation du samedi.",
+      "status": "pending",
+      "statusLabel": "En attente",
+      "responseMessage": "Votre demande est en cours d'examen par l'équipe pédagogique.",
+      "priority": "low",
+      "submittedAt": "Aujourd'hui à 11h45",
+      "createdAt": "2026-02-15T11:45:00.000Z"
+    },
+    {
+      "_id": "654321000000000000000011",
+      "id": "REQ-2026-002891",
+      "requestId": "REQ-2026-002891",
+      "user": "654321000000000000000002",
+      "requestType": "service_inquiry",
+      "serviceName": "Investissement & placements",
+      "subject": "Mise en place d'un plan DCA mensuel de 50 000 FCFA",
+      "description": "Je souhaite activer un plan d'épargne programmé de 50 000 FCFA par mois, réparti 60% Bitcoin et 40% Ethereum.",
+      "status": "in_progress",
+      "statusLabel": "En cours",
+      "responseMessage": "Un conseiller dédié est en train de configurer votre plan de prélèvement automatique.",
+      "priority": "medium",
+      "submittedAt": "Aujourd'hui à 09h15",
+      "createdAt": "2026-02-15T09:15:00.000Z"
+    },
+    {
+      "_id": "654321000000000000000010",
+      "id": "REQ-2026-001429",
+      "requestId": "REQ-2026-001429",
+      "user": "654321000000000000000002",
+      "requestType": "service_inquiry",
+      "serviceName": "Achat & Vente de cryptomonnaies",
+      "subject": "Demande de conversion 500 USDT vers Mobile Money Wave",
+      "description": "Bonjour, je souhaite convertir 500 USDT vers mon compte Wave en Côte d'Ivoire (+225 07 12 34 56 78). Quel est le taux actuel appliqué ?",
+      "status": "completed",
+      "statusLabel": "Traitée",
+      "responseMessage": "Transaction exécutée avec succès au taux garanti de 655 FCFA / USDT. Fonds crédités sur votre numéro Wave.",
+      "priority": "high",
+      "submittedAt": "Hier à 14h30",
+      "createdAt": "2026-02-14T14:30:00.000Z"
+    }
+  ],
+  "kycs": [
+    {
+      "_id": "654321000000000000000020",
+      "id": "654321000000000000000020",
+      "user": "654321000000000000000002",
+      "documentType": "national_id",
+      "documentName": "CNI_Kouassi_Alain.pdf",
+      "documentUrl": "https://cdn.cryptoconnect.app/docs/cni_kouassi.pdf",
+      "status": "verified",
+      "reviewedBy": "654321000000000000000001",
+      "reviewedAt": "2026-01-16T12:00:00.000Z",
+      "notes": "Document conforme et valide jusqu'en 2030.",
+      "createdAt": "2026-01-15T11:00:00.000Z"
+    },
+    {
+      "_id": "654321000000000000000021",
+      "id": "654321000000000000000021",
+      "user": "654321000000000000000003",
+      "documentType": "passport",
+      "documentName": "Passeport_Marie_Dupont.pdf",
+      "documentUrl": "https://cdn.cryptoconnect.app/docs/passport_marie.pdf",
+      "status": "pending",
+      "notes": "Document reçu, en attente de vérification par un opérateur.",
+      "createdAt": "2026-02-01T15:00:00.000Z"
+    }
+  ]
+}

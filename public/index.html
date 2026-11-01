@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>CryptoConnect Pro — La cryptomonnaie plus proche de vous</title>
+  <meta name="description" content="Plateforme CryptoConnect Pro : Services financiers, achat/vente de cryptomonnaies, investissement, éducation et accompagnement personnalisé.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==================== DESKTOP & RESPONSIVE GLOBAL NAVBAR ==================== -->
+  <header class="desktop-navbar" id="desktopNavbar">
+    <div class="navbar-container">
+      
+      <!-- Brand Logo -->
+      <div class="navbar-brand" id="navBrandLogo" data-nav-target="screen-landing" style="cursor: pointer;">
+        <div class="brand-logo-icon">
+          <svg viewBox="0 0 40 40" fill="none">
+            <polygon points="20,2 36,11 36,29 20,38 4,29 4,11" stroke="#FFB800" stroke-width="3" fill="rgba(255, 184, 0, 0.18)"/>
+            <path d="M26 15C24.5 13.5 22.5 13 20 13C15.5 13 13 16 13 20C13 24 15.5 27 20 27C22.5 27 24.5 26.5 26 25" stroke="#FFB800" stroke-width="3.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="brand-text-wrap">
+          <span class="brand-name">CryptoConnect</span>
+          <span class="brand-badge-pro">PRO</span>
+        </div>
+      </div>
+
+      <!-- Main Desktop Navigation Links -->
+      <nav class="desktop-nav-links" id="desktopNavLinks">
+        <button class="nav-link-btn active" data-nav-target="screen-landing" id="navLinkHome">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span id="navHomeLabel">Accueil</span>
+        </button>
+        <button class="nav-link-btn" data-nav-target="screen-services">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+          <span>Nos services</span>
+        </button>
+        <button class="nav-link-btn" data-nav-target="screen-education">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>
+          <span>Éducation</span>
+        </button>
+        <button class="nav-link-btn" data-nav-target="screen-contact">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span>Contact</span>
+        </button>
+        <!-- Admin Link (Displayed when logged in as admin/super_admin) -->
+        <button class="nav-link-btn nav-admin-btn" data-nav-target="screen-admin" id="navLinkAdmin" style="display: none; color: #F87171;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="11" r="3"/></svg>
+          <span>Administration</span>
+        </button>
+      </nav>
+
+      <!-- Right Actions: Ticker + Demo + User/Auth Buttons -->
+      <div class="navbar-actions">
+        <!-- Live Ticker Pill (Desktop) -->
+        <div class="nav-mini-ticker" id="navMiniTicker" title="Cours en direct">
+          <span class="ticker-dot"></span>
+          <span class="ticker-btc-label">BTC: $68,450</span>
+          <span class="ticker-btc-change">+2.8%</span>
+        </div>
+
+        <!-- 1-Click Fast Demo Selector Button -->
+        <button class="btn-nav-demo" id="btnNavQuickDemo" title="Explorer la démo en 1 clic">
+          <span>⚡ Démo 1-Clic</span>
+        </button>
+
+        <!-- Visitor Auth Buttons (When NOT logged in) -->
+        <div class="navbar-auth-group" id="navVisitorAuthGroup">
+          <button class="btn-nav-login" id="btnNavLogin">Se connecter</button>
+          <button class="btn-nav-register" id="btnNavRegister">Créer un compte</button>
+        </div>
+
+        <!-- User Profile Quick Chip (When LOGGED IN) -->
+        <div class="navbar-user-group" id="navUserAuthGroup" style="display: none;">
+          <button class="nav-user-chip" id="btnNavProfile" data-nav-target="screen-profile" title="Mon Espace">
+            <div class="nav-user-avatar">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span class="avatar-online-dot"></span>
+            </div>
+            <span class="nav-user-name" id="navUserName">Kouassi A.</span>
+          </button>
+          <button class="btn-nav-logout" id="btnNavLogout" title="Se déconnecter">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT WRAPPER ==================== -->
+  <main class="desktop-main-wrapper">
+    
+    <!-- Toast Notifications Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <div class="desktop-container" id="screensViewport">
+
+      <!-- ============================================================
+           SCREEN 0: LANDING PAGE (VÉRITABLE PAGE D'ACCUEIL PROFESSIONNELLE)
+      ============================================================ -->
+      <section class="app-screen active" id="screen-landing">
+        
+        <!-- Hero Section -->
+        <div class="landing-hero-grid">
+          <div class="landing-hero-left">
+            
+            <div class="hero-brand-badge">
+              <span class="badge-dot"></span>
+              Plateforme certifiée & conforme en Afrique
+            </div>
+
+            <!-- Logo et Nom -->
+            <div class="landing-brand-header">
+              <div class="brand-logo-icon large">
+                <svg viewBox="0 0 40 40" fill="none">
+                  <polygon points="20,2 36,11 36,29 20,38 4,29 4,11" stroke="#FFB800" stroke-width="3" fill="rgba(255, 184, 0, 0.22)"/>
+                  <path d="M26 15C24.5 13.5 22.5 13 20 13C15.5 13 13 16 13 20C13 24 15.5 27 20 27C22.5 27 24.5 26.5 26 25" stroke="#FFB800" stroke-width="3.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span class="landing-brand-title">CryptoConnect Pro</span>
+            </div>
+
+            <!-- Titre Accrocheur -->
+            <h1 class="landing-hero-title">
+              La cryptomonnaie plus proche de vous — <span>Simple, Sécurisée & Sans frontières</span>.
+            </h1>
+
+            <!-- Description claire des fonctionnalités et avantages -->
+            <p class="landing-hero-description">
+              Achetez, vendez, épargnez et formez-vous aux actifs numériques en toute sérénité. Profitez de paiements instantanés par <strong>Mobile Money & Virement</strong>, de plans d'investissement automatisés à haut rendement et d'un accompagnement personnalisé par nos experts <strong>7j/7</strong>.
+            </p>
+
+            <!-- Boutons d'Action Principaux -->
+            <div class="landing-cta-group">
+              <button class="btn-gold-cta large" id="btnLandingRegister">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+                <span>Créer un compte</span>
+              </button>
+              <button class="btn-secondary-cta large" id="btnLandingLogin">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+                <span>Se connecter</span>
+              </button>
+              <button class="btn-nav-demo" id="btnLandingDemo" style="padding: 12px 20px; font-size: 14px;">
+                <span>⚡ Démo 1-Clic</span>
+              </button>
+            </div>
+
+            <!-- Instant Converter Box (Vue d'accueil simple & pratique) -->
+            <div class="quick-converter-box">
+              <div class="converter-header">
+                <h4>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFB800" stroke-width="2.2"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
+                  <span>Simulateur Instantané d'Échange</span>
+                </h4>
+                <span class="converter-badge-fast">⚡ Taux Garanti 0% Frais</span>
+              </div>
+
+              <div class="converter-inputs-grid">
+                <!-- Input Left: You Send -->
+                <div class="converter-field-group">
+                  <label>Vous envoyez</label>
+                  <div class="converter-input-wrap">
+                    <input type="number" id="converterAmountInput" value="100" min="1" step="any">
+                    <select id="converterFromSelect">
+                      <option value="USDT" selected>USDT</option>
+                      <option value="BTC">BTC</option>
+                      <option value="ETH">ETH</option>
+                      <option value="SOL">SOL</option>
+                      <option value="FCFA">FCFA</option>
+                      <option value="EUR">EUR</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Center Switch Arrow -->
+                <div class="converter-arrow-btn">
+                  ⇄
+                </div>
+
+                <!-- Input Right: You Receive -->
+                <div class="converter-field-group">
+                  <label>Vous recevez (Estimé)</label>
+                  <div class="converter-input-wrap">
+                    <input type="text" id="converterResultInput" value="60 500" readonly style="color: #34D399;">
+                    <select id="converterToSelect">
+                      <option value="FCFA" selected>FCFA (Wave/Orange)</option>
+                      <option value="USDT">USDT</option>
+                      <option value="BTC">BTC</option>
+                      <option value="EUR">EUR (€)</option>
+                      <option value="USD">USD ($)</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="converter-result-bar">
+                <span class="converter-rate-info" id="converterRateDisplay">
+                  Taux de change en direct : <strong>1 USDT = 605 FCFA</strong>
+                </span>
+                <button class="btn-gold-cta small" id="btnConverterAction">
+                  <span>Échanger immédiatement</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Métriques de Confiance -->
+            <div class="landing-stats-bar">
+              <div class="stat-pill">
+                <strong>+50 000</strong>
+                <span>Clients actifs</span>
+              </div>
+              <div class="stat-sep"></div>
+              <div class="stat-pill">
+                <strong>99.98%</strong>
+                <span>Disponibilité</span>
+              </div>
+              <div class="stat-sep"></div>
+              <div class="stat-pill">
+                <strong>7j / 7</strong>
+                <span>Support francophone</span>
+              </div>
+              <div class="stat-sep"></div>
+              <div class="stat-pill">
+                <strong>AES-256</strong>
+                <span>Sécurité bancaire</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Hero Visual Right -->
+          <div class="landing-hero-right">
+            <div class="visual-glow-frame">
+              <img src="assets/images/splash_phone.jpg" alt="CryptoConnect 3D Ecosystem" class="splash-hero-img">
+              <div class="hero-ambient-glow"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section: Fonctionnalités Clés & Avantages -->
+        <section class="landing-features-section">
+          <div class="section-title-wrap center">
+            <span class="spotlight-tag">🌟 POURQUOI NOUS CHOISIR</span>
+            <h3>Une suite complète pour réussir dans la cryptomonnaie</h3>
+            <p>Tout ce dont vous avez besoin réuni au sein d'une seule interface professionnelle, accessible sur mobile et ordinateur.</p>
+          </div>
+
+          <div class="landing-features-grid">
+            
+            <!-- Feature 1 -->
+            <div class="feature-card">
+              <div class="feature-icon blue">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
+              </div>
+              <h4>Achat & Vente Instantanés</h4>
+              <p>Échangez vos Bitcoins, Ethereum et USDT avec vos devises locales via Mobile Money (Orange, Wave, MTN, Moov) et Carte Bancaire.</p>
+              <div class="feature-highlight">⚡ Exécution immédiate 0% frais cachés</div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="feature-card">
+              <div class="feature-icon green">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              </div>
+              <h4>Investissement & Placements</h4>
+              <p>Faites fructifier votre capital grâce au Staking sécurisé et aux plans d'épargne programmée (DCA) dès 10 000 FCFA / 15 €.</p>
+              <div class="feature-highlight">📈 Jusqu'à 8.5% de rendement annuel</div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="feature-card">
+              <div class="feature-icon purple">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+              <h4>Académie & Formation</h4>
+              <p>Modules éducatifs interactifs certifiés, webinaires hebdomadaires et séances de coaching individuel du débutant au trader confirmé.</p>
+              <div class="feature-highlight">🎓 Accompagnement pédagogique certifié</div>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="feature-card">
+              <div class="feature-icon amber">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+              </div>
+              <h4>Conseil & Support Humain 7j/7</h4>
+              <p>Un conseiller dédié joignable directement par WhatsApp, téléphone et email pour sécuriser vos portefeuilles et guider vos choix.</p>
+              <div class="feature-highlight">🤝 Réponse garantie sous 24h ouvrées</div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Section: Marché Crypto en direct -->
+        <section class="landing-market-section">
+          <div class="section-title-wrap" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <h3>Cours du marché en temps réel</h3>
+              <p>Suivez les fluctuations des principaux actifs cryptos en direct</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+              <!-- Currency Switcher Toggle -->
+              <div class="currency-switcher-wrap" id="landingCurrencySwitcher">
+                <button class="currency-pill active" data-currency="USD">USD ($)</button>
+                <button class="currency-pill" data-currency="FCFA">FCFA</button>
+                <button class="currency-pill" data-currency="EUR">EUR (€)</button>
+              </div>
+              <button class="btn-secondary-cta small" data-nav-target="screen-education">Explorer l'académie</button>
+            </div>
+          </div>
+
+          <div class="crypto-ticker-desktop-grid" id="landingTickerGrid">
+            <!-- Dynamically populated or static fallback -->
+            <div class="ticker-desktop-card">
+              <div class="ticker-card-top">
+                <div class="ticker-token-info">
+                  <img src="assets/images/bitcoin_3d.jpg" alt="BTC">
+                  <div><strong>Bitcoin</strong><span class="token-sym">BTC</span></div>
+                </div>
+                <span class="ticker-change up">+2.84%</span>
+              </div>
+              <div class="ticker-card-price">$68,450.00</div>
+            </div>
+            <div class="ticker-desktop-card">
+              <div class="ticker-card-top">
+                <div class="ticker-token-info">
+                  <img src="assets/images/ethereum_3d.jpg" alt="ETH">
+                  <div><strong>Ethereum</strong><span class="token-sym">ETH</span></div>
+                </div>
+                <span class="ticker-change up">+3.15%</span>
+              </div>
+              <div class="ticker-card-price">$3,520.00</div>
+            </div>
+            <div class="ticker-desktop-card">
+              <div class="ticker-card-top">
+                <div class="ticker-token-info">
+                  <img src="assets/images/ethereum_3d.jpg" alt="SOL">
+                  <div><strong>Solana</strong><span class="token-sym">SOL</span></div>
+                </div>
+                <span class="ticker-change up">+5.72%</span>
+              </div>
+              <div class="ticker-card-price">$184.50</div>
+            </div>
+            <div class="ticker-desktop-card">
+              <div class="ticker-card-top">
+                <div class="ticker-token-info">
+                  <img src="assets/images/bitcoin_3d.jpg" alt="USDT">
+                  <div><strong>Tether USD</strong><span class="token-sym">USDT</span></div>
+                </div>
+                <span class="ticker-change up">+0.01%</span>
+              </div>
+              <div class="ticker-card-price">$1.00</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section: Appel à l'action final (CTA Banner) -->
+        <div class="landing-final-cta-banner">
+          <div class="cta-banner-content">
+            <h2>Prêt à franchir le pas vers votre indépendance financière ?</h2>
+            <p>Rejoignez plus de 50 000 utilisateurs et commencez dès aujourd'hui avec CryptoConnect Pro.</p>
+            <div class="landing-cta-group center">
+              <button class="btn-gold-cta large" onclick="openModal('modalRegister')">
+                <span>Créer mon compte gratuit</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+              <button class="btn-secondary-cta large" onclick="openModal('modalLogin')">
+                <span>Accéder à mon espace</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Professionnel -->
+        <footer class="landing-footer">
+          <div class="footer-top">
+            <div class="footer-brand">
+              <div class="brand-logo-icon">
+                <svg viewBox="0 0 40 40" fill="none">
+                  <polygon points="20,2 36,11 36,29 20,38 4,29 4,11" stroke="#FFB800" stroke-width="3" fill="rgba(255, 184, 0, 0.22)"/>
+                  <path d="M26 15C24.5 13.5 22.5 13 20 13C15.5 13 13 16 13 20C13 24 15.5 27 20 27C22.5 27 24.5 26.5 26 25" stroke="#FFB800" stroke-width="3.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span>CryptoConnect Pro</span>
+            </div>
+            <div class="footer-nav">
+              <a href="#" data-nav-target="screen-services">Nos services</a>
+              <a href="#" data-nav-target="screen-education">Éducation & Guides</a>
+              <a href="#" data-nav-target="screen-contact">Centre de contact</a>
+              <a href="https://wa.me/2250788990011" target="_blank">WhatsApp direct</a>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>© 2026 CryptoConnect Pro — Tous droits réservés. Plateforme sécurisée par chiffrement AES-256.</p>
+          </div>
+        </footer>
+
+      </section>
+
+      <!-- ============================================================
+           SCREEN 2: ESPACE PERSONNEL (DASHBOARD CLIENT CONNECTÉ)
+      ============================================================ -->
+      <section class="app-screen" id="screen-home">
+        
+        <!-- Welcome Hero Banner -->
+        <div class="desktop-home-hero-grid">
+          
+          <!-- Left Column: User Greeting & Spotlight Box -->
+          <div class="home-hero-card">
+            <div class="home-greeting-bar">
+              <div class="greeting-text">
+                <h2>Bonjour Kouassi 👋</h2>
+                <p>Bienvenue dans votre Espace Personnel CryptoConnect Pro</p>
+              </div>
+              <div class="profile-avatar-btn" id="btnHomeProfile" title="Accéder à mon profil">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <div class="avatar-online-dot"></div>
+              </div>
+            </div>
+
+            <!-- Spotlight Card -->
+            <div class="hero-spotlight-box">
+              <div class="spotlight-content">
+                <span class="spotlight-tag">💡 Guide Recommandé</span>
+                <h3>La cryptomonnaie c'est quoi ?</h3>
+                <p>Une nouvelle façon de gérer votre argent, sans frontières, sécurisée par la blockchain et accessible instantanément.</p>
+                <div class="spotlight-actions">
+                  <button class="btn-pill-gold" id="btnHeroLearnMore">
+                    <span>En savoir plus</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"/></svg>
+                  </button>
+                  <button class="btn-pill-glass" id="linkViewAllServices">
+                    <span>Nos services</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="spotlight-coin-wrap">
+                <div class="hero-floating-coin">
+                  <img src="assets/images/bitcoin_3d.jpg" alt="Bitcoin 3D Coin">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Live Crypto Tickers Widget -->
+          <div class="home-tickers-widget-card">
+            <div class="widget-header">
+              <div class="widget-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFB800" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                <h4>Marché Crypto en Direct</h4>
+              </div>
+              <span class="live-pulse-badge">● En direct</span>
+            </div>
+
+            <!-- Ticker Grid -->
+            <div class="crypto-ticker-desktop-grid" id="cryptoTickerBar">
+              <!-- Dynamically populated by JS -->
+            </div>
+
+            <div class="widget-footer-bar">
+              <span>💳 Paiements instantanés acceptés : Mobile Money (Orange, Wave, MTN, Moov) & Carte</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section: Nos Services (4 Colonnes Desktop) -->
+        <section class="desktop-services-section">
+          <div class="section-title-wrap">
+            <div>
+              <h3>Services disponibles dans votre espace</h3>
+              <p>Des solutions concrètes et adaptées à vos objectifs financiers</p>
+            </div>
+            <button class="btn-text-link" data-nav-target="screen-services">
+              <span>Voir tout le catalogue</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+
+          <div class="services-desktop-grid">
+            <!-- Service 1: Achat & Vente -->
+            <div class="service-desktop-card" data-service-id="srv_001">
+              <div class="card-accent-line blue"></div>
+              <div class="service-icon-box blue">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
+              </div>
+              <h4>Achat & Vente de cryptomonnaies</h4>
+              <p>Achetez et vendez vos Bitcoins, Ethereum et USDT en toute sécurité avec vos moyens de paiement locaux et internationaux.</p>
+              <ul class="service-micro-benefits">
+                <li>✓ Taux en temps réel</li>
+                <li>✓ Mobile Money & Carte</li>
+              </ul>
+              <div class="service-card-action">
+                <span>Explorer ce service</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </div>
+            </div>
+
+            <!-- Service 2: Investissement -->
+            <div class="service-desktop-card" data-service-id="srv_002">
+              <div class="card-accent-line green"></div>
+              <div class="service-icon-box green">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              </div>
+              <h4>Investissement & placements</h4>
+              <p>Faites fructifier votre capital grâce à des plans de rendement automatisés (Staking, DCA) et une gestion active des risques.</p>
+              <ul class="service-micro-benefits">
+                <li>✓ Jusqu'à 8.5% APY</li>
+                <li>✓ DCA dès 10 000 FCFA</li>
+              </ul>
+              <div class="service-card-action">
+                <span>Explorer ce service</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </div>
+            </div>
+
+            <!-- Service 3: Formation -->
+            <div class="service-desktop-card" data-service-id="srv_003">
+              <div class="card-accent-line purple"></div>
+              <div class="service-icon-box purple">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+              <h4>Formation & accompagnement</h4>
+              <p>Apprenez à votre rythme avec nos parcours pédagogiques interactifs et maîtrisez les bases de la blockchain et du trading.</p>
+              <ul class="service-micro-benefits">
+                <li>✓ Modules certifiants</li>
+                <li>✓ Ateliers en direct 1-on-1</li>
+              </ul>
+              <div class="service-card-action">
+                <span>Explorer ce service</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </div>
+            </div>
+
+            <!-- Service 4: Conseil -->
+            <div class="service-desktop-card" data-service-id="srv_004">
+              <div class="card-accent-line amber"></div>
+              <div class="service-icon-box amber">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+              </div>
+              <h4>Conseil & support personnalisé</h4>
+              <p>Une équipe d'analystes dédiée joignable 7j/7 pour auditer vos portefeuilles et vous orienter lors de vos décisions d'investissement.</p>
+              <ul class="service-micro-benefits">
+                <li>✓ Conseiller dédié WhatsApp</li>
+                <li>✓ Audit de sécurité offert</li>
+              </ul>
+              <div class="service-card-action">
+                <span>Explorer ce service</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </section>
+
+      <!-- ============================================================
+           SCREEN 3: CATALOGUE DES SERVICES
+      ============================================================ -->
+      <section class="app-screen" id="screen-services">
+        <div class="desktop-page-header">
+          <div class="header-texts">
+            <h2>Catalogue des Services CryptoConnect</h2>
+            <p>Des solutions professionnelles conçues pour sécuriser, optimiser et développer votre patrimoine en actifs numériques.</p>
+          </div>
+        </div>
+
+        <div class="services-two-column-layout">
+          
+          <!-- Main Left Column: Rich Services Cards -->
+          <div class="services-main-list">
+            
+            <!-- Service 1 -->
+            <div class="service-rich-card" data-service-id="srv_001">
+              <div class="rich-card-header">
+                <div class="service-icon-box blue">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
+                </div>
+                <div class="rich-title-meta">
+                  <h3>Achat & Vente de cryptomonnaies</h3>
+                  <span class="meta-badge kyc-req">Vérification KYC requise</span>
+                </div>
+              </div>
+              <p class="rich-desc">
+                Accédez à une plateforme d'échange fluide et sécurisée. Achetez du Bitcoin, Ethereum, USDT et plus de 50 autres actifs avec vos moyens de paiement favoris locaux (Mobile Money) et internationaux.
+              </p>
+              <div class="rich-benefits-grid">
+                <div class="benefit-tag">✓ Taux compétitifs en direct</div>
+                <div class="benefit-tag">✓ Compatibilité Mobile Money & Virement</div>
+                <div class="benefit-tag">✓ Exécution instantanée sans frais cachés</div>
+                <div class="benefit-tag">✓ Sécurisation en Cold Storage certifié</div>
+              </div>
+              <div class="rich-card-footer">
+                <button class="btn-gold-cta small">Demander ce service</button>
+                <span class="rich-link">Détails et étapes d'accès →</span>
+              </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-rich-card" data-service-id="srv_002">
+              <div class="rich-card-header">
+                <div class="service-icon-box green">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                </div>
+                <div class="rich-title-meta">
+                  <h3>Investissement & placements</h3>
+                  <span class="meta-badge kyc-req">Vérification KYC requise</span>
+                </div>
+              </div>
+              <p class="rich-desc">
+                Découvrez nos solutions de staking institutionnel, de plans d'épargne automatique (DCA) et de gestion de portefeuille clé en main gérés par des analystes professionnels.
+              </p>
+              <div class="rich-benefits-grid">
+                <div class="benefit-tag">✓ Plans DCA dès 10 000 FCFA / 15 €</div>
+                <div class="benefit-tag">✓ Rendements jusqu'à 8.5% APY</div>
+                <div class="benefit-tag">✓ Rapports hebdomadaires transparents</div>
+                <div class="benefit-tag">✓ Protection et couverture du capital</div>
+              </div>
+              <div class="rich-card-footer">
+                <button class="btn-gold-cta small">Demander ce service</button>
+                <span class="rich-link">Détails et étapes d'accès →</span>
+              </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-rich-card" data-service-id="srv_003">
+              <div class="rich-card-header">
+                <div class="service-icon-box purple">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                </div>
+                <div class="rich-title-meta">
+                  <h3>Formation & accompagnement</h3>
+                  <span class="meta-badge free-access">Accès Ouvert</span>
+                </div>
+              </div>
+              <p class="rich-desc">
+                Maîtrisez la finance décentralisée, l'analyse de marché et la sécurisation d'actifs. Nos programmes certifiants vous guident pas à pas pour devenir un investisseur autonome et serein.
+              </p>
+              <div class="rich-benefits-grid">
+                <div class="benefit-tag">✓ Parcours pédagogiques certifiés</div>
+                <div class="benefit-tag">✓ Ateliers live hebdomadaires</div>
+                <div class="benefit-tag">✓ Coaching individuel 1-on-1</div>
+                <div class="benefit-tag">✓ Accès à notre communauté privée</div>
+              </div>
+              <div class="rich-card-footer">
+                <button class="btn-gold-cta small">Demander ce service</button>
+                <span class="rich-link">Détails et étapes d'accès →</span>
+              </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-rich-card" data-service-id="srv_004">
+              <div class="rich-card-header">
+                <div class="service-icon-box amber">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                </div>
+                <div class="rich-title-meta">
+                  <h3>Conseil & support personnalisé</h3>
+                  <span class="meta-badge free-access">Support Dédié</span>
+                </div>
+              </div>
+              <p class="rich-desc">
+                Bénéficiez d'un conseiller dédié pour auditer la sécurité de vos portefeuilles, résoudre vos incidents techniques et vous orienter lors de vos décisions d'investissement importantes.
+              </p>
+              <div class="rich-benefits-grid">
+                <div class="benefit-tag">✓ Conseillers disponibles 7j/7</div>
+                <div class="benefit-tag">✓ Audit de sécurité complet de vos wallets</div>
+                <div class="benefit-tag">✓ Assistance immédiate aux transferts</div>
+                <div class="benefit-tag">✓ Conseils conformes aux régulations</div>
+              </div>
+              <div class="rich-card-footer">
+                <button class="btn-gold-cta small">Demander ce service</button>
+                <span class="rich-link">Détails et étapes d'accès →</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Sidebar Right: Trust and Help Cards -->
+          <div class="services-sidebar">
+            <div class="why-choose-card">
+              <h4>Pourquoi choisir CryptoConnect ?</h4>
+              <p class="why-sub">Votre partenaire de confiance en Afrique et dans le monde.</p>
+              <ul class="benefit-checklist">
+                <li><span class="check-icon">✓</span> <strong>Sécurité et fiabilité</strong> : Stockage à froid et audits réguliers de nos protocoles.</li>
+                <li><span class="check-icon">✓</span> <strong>Accompagnement sur mesure</strong> : Des conseillers humains joignables directement par téléphone et WhatsApp.</li>
+                <li><span class="check-icon">✓</span> <strong>Une équipe disponible 7j/7</strong> : Réponse garantie sous 24h ouvrées à toutes vos demandes.</li>
+                <li><span class="check-icon">✓</span> <strong>Conformité réglementaire</strong> : Procédures strictes de vérification d'identité (KYC/AML).</li>
+              </ul>
+            </div>
+
+            <div class="sidebar-help-box">
+              <h4>Une question spécifique ?</h4>
+              <p>Nos conseillers sont disponibles pour vous orienter immédiatement.</p>
+              <div class="sidebar-contact-btns">
+                <a href="https://wa.me/2250788990011?text=Bonjour%20CryptoConnect" target="_blank" class="btn-channel-action whatsapp">
+                  Discuter sur WhatsApp
+                </a>
+                <a href="tel:+2252722456789" class="btn-channel-action phone">
+                  Appeler le +225 27 22 45 67 89
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SCREEN 4: ÉDUCATION & ACADÉMIE
+      ============================================================ -->
+      <section class="app-screen" id="screen-education">
+        <div class="desktop-page-header">
+          <div class="header-texts">
+            <h2>Académie & Éducation Crypto</h2>
+            <p>Apprenez à votre rythme avec des guides rédigés par nos analystes certifiés, du niveau débutant aux stratégies avancées.</p>
+          </div>
+        </div>
+
+        <!-- Toolbar -->
+        <div class="desktop-edu-toolbar">
+          <div class="filter-pills-row">
+            <button class="filter-pill active" data-difficulty="all">Tous les articles</button>
+            <button class="filter-pill" data-difficulty="beginner">Débutant</button>
+            <button class="filter-pill" data-difficulty="advanced">Avancé</button>
+          </div>
+
+          <div class="search-bar-wrap">
+            <svg class="search-icon-inside" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="search-input" id="educationSearchInput" placeholder="Rechercher un concept, bitcoin, blockchain, DCA...">
+          </div>
+        </div>
+
+        <!-- Educational Articles Grid in 3 Columns Desktop -->
+        <div class="education-desktop-grid" id="educationCardsList">
+          
+          <!-- Article 1: Bitcoin -->
+          <article class="edu-desktop-card" data-article-id="cnt_001">
+            <div class="edu-card-cover">
+              <img src="assets/images/bitcoin_3d.jpg" alt="Qu'est-ce que le Bitcoin ?">
+              <span class="badge-tag beginner">Débutant</span>
+            </div>
+            <div class="edu-card-body">
+              <div class="card-meta-line">
+                <span>⏱ 4 min de lecture</span>
+                <span>• Guide fondamental</span>
+              </div>
+              <h4>Qu'est-ce que le Bitcoin ?</h4>
+              <p>Découvrez les bases de la première cryptomonnaie décentralisée et comprenez pourquoi elle révolutionne le système financier mondial.</p>
+              <div class="edu-card-footer">
+                <span class="read-link">Lire l'article complet →</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 2: Blockchain -->
+          <article class="edu-desktop-card" data-article-id="cnt_002">
+            <div class="edu-card-cover">
+              <img src="assets/images/ethereum_3d.jpg" alt="Comment fonctionne la blockchain ?">
+              <span class="badge-tag beginner">Débutant</span>
+            </div>
+            <div class="edu-card-body">
+              <div class="card-meta-line">
+                <span>⏱ 5 min de lecture</span>
+                <span>• Technologie & Consensus</span>
+              </div>
+              <h4>Comment fonctionne la blockchain ?</h4>
+              <p>Une technologie de registre distribué qui supprime les intermédiaires bancaires tout en garantissant une transparence et une immutabilité totales.</p>
+              <div class="edu-card-footer">
+                <span class="read-link">Lire l'article complet →</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 3: Trading & Stratégies -->
+          <article class="edu-desktop-card" data-article-id="cnt_003">
+            <div class="edu-card-cover">
+              <img src="assets/images/chart_3d.jpg" alt="Stratégies d'investissement en cryptomonnaies">
+              <span class="badge-tag advanced">Avancé</span>
+            </div>
+            <div class="edu-card-body">
+              <div class="card-meta-line">
+                <span>⏱ 7 min de lecture</span>
+                <span>• Gestion du risque</span>
+              </div>
+              <h4>Stratégies d'investissement en cryptomonnaies</h4>
+              <p>DCA (Dollar Cost Averaging), diversification de portefeuille et conservation à froid : appliquez les règles des investisseurs professionnels.</p>
+              <div class="edu-card-footer">
+                <span class="read-link">Lire l'article complet →</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SCREEN 5: ARTICLE DETAIL SCREEN
+      ============================================================ -->
+      <section class="app-screen" id="screen-article">
+        <div class="article-top-nav-bar">
+          <button class="btn-back-breadcrumb" id="btnBackFromArticle">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            <span>Retour aux articles</span>
+          </button>
+        </div>
+
+        <div class="article-desktop-layout">
+          <!-- Left Column -->
+          <aside class="article-left-sidebar">
+            <div class="article-hero-banner">
+              <img id="articleHeroImg" src="assets/images/bitcoin_3d.jpg" alt="Hero Banner">
+            </div>
+
+            <div class="article-sidebar-card">
+              <span class="badge-tag beginner" id="articleDetailBadge">Débutant</span>
+              <div class="article-meta-info" style="margin-top: 10px;">
+                <span id="articleReadingTime">⏱ Lecture 4 min</span>
+                <span>• Certifié CryptoConnect</span>
+              </div>
+
+              <!-- En résumé Box -->
+              <div class="summary-box">
+                <h4>En résumé</h4>
+                <ul class="summary-list" id="articleSummaryList">
+                  <li>Une monnaie numérique</li>
+                  <li>Décentralisée sans banque centrale</li>
+                  <li>Sécurisée par la blockchain</li>
+                  <li>Offre limitée à 21 millions d'unités</li>
+                </ul>
+              </div>
+
+              <button class="btn-channel-action whatsapp" onclick="window.open('https://wa.me/2250788990011?text=Bonjour%20CryptoConnect,%20j%27ai%20une%20question%20sur%20cet%20article', '_blank')">
+                Poser une question à un expert
+              </button>
+            </div>
+          </aside>
+
+          <!-- Right Column -->
+          <div class="article-reading-pane">
+            <h1 id="articleDetailTitle">Qu'est-ce que le Bitcoin ?</h1>
+            
+            <p class="article-lead-paragraph" id="articleIntroText">
+              Le Bitcoin est une cryptomonnaie créée en 2009. Il permet d'effectuer des transactions sans intermédiaire, grâce à la technologie blockchain.
+            </p>
+
+            <div class="article-full-text" id="articleFullText">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SCREEN 6: CENTRE DE CONTACT
+      ============================================================ -->
+      <section class="app-screen" id="screen-contact">
+        <div class="desktop-page-header">
+          <div class="header-texts">
+            <h2>Centre de Contact & Support Client</h2>
+            <p>Une question ou un projet d'investissement ? Nos conseillers francophones sont à votre entière disposition.</p>
+          </div>
+        </div>
+
+        <div class="contact-desktop-two-col">
+          <!-- Left Column -->
+          <div class="contact-channels-column">
+            <!-- WhatsApp -->
+            <div class="contact-channel-card">
+              <div class="channel-header">
+                <div class="channel-icon green">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                </div>
+                <div class="channel-info">
+                  <h4>WhatsApp Direct</h4>
+                  <p>Échangez instantanément avec notre conseiller de permanence.</p>
+                </div>
+              </div>
+              <a href="https://wa.me/2250788990011?text=Bonjour%20CryptoConnect,%20j%27ai%20une%20question" target="_blank" class="btn-channel-action whatsapp" id="btnContactWhatsapp">
+                Discuter maintenant sur WhatsApp
+              </a>
+            </div>
+
+            <!-- Phone Call -->
+            <div class="contact-channel-card">
+              <div class="channel-header">
+                <div class="channel-icon blue">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div class="channel-info">
+                  <h4>Appel Téléphonique</h4>
+                  <p>Parlez de vive voix à nos experts financiers.</p>
+                </div>
+              </div>
+              <a href="tel:+2252722456789" class="btn-channel-action phone" id="btnContactPhone">
+                Appeler le +225 27 22 45 67 89
+              </a>
+            </div>
+
+            <!-- Horaires & Localisation -->
+            <div class="working-hours-card">
+              <div class="clock-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div class="hours-info">
+                <h5>Horaires d'ouverture & Permanence</h5>
+                <p><strong>Lundi - Samedi :</strong> 8h00 - 20h00 GMT</p>
+                <p><strong>Dimanche :</strong> 9h00 - 17h00 GMT</p>
+                <p style="margin-top: 6px; font-size: 11.5px; color: var(--text-sub);">📍 Siège régional : Abidjan Plateau, Tour Postel 2001</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Contact Form -->
+          <div class="contact-form-column">
+            <div class="contact-form-desktop-card">
+              <div class="form-card-header">
+                <div class="channel-icon purple" style="width: 38px; height: 38px;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </div>
+                <div>
+                  <h3>Envoyez-nous un message sécurisé</h3>
+                  <p style="font-size: 12.5px; color: var(--text-muted);">Réponse garantie par email sous 24 heures maximum.</p>
+                </div>
+              </div>
+
+              <form id="formContactMessage">
+                <div class="form-row-2col">
+                  <div class="form-group">
+                    <label>Votre Nom complet *</label>
+                    <input type="text" class="form-control" name="name" id="contactFormName" placeholder="Ex: Kouassi Armand" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Votre Adresse Email *</label>
+                    <input type="email" class="form-control" name="email" id="contactFormEmail" placeholder="nom@exemple.com" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Sujet de votre demande *</label>
+                  <input type="text" class="form-control" name="subject" placeholder="Ex: Renseignement Achat Bitcoin par Mobile Money" required>
+                </div>
+
+                <div class="form-group">
+                  <label>Votre Message détaillé *</label>
+                  <textarea class="form-control" name="message" rows="5" placeholder="Expliquez-nous votre besoin, vos objectifs ou vos interrogations..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-gold-cta" style="margin-top: 8px;">
+                  <span>Transmettre mon message</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SCREEN 7: MON PROFIL (ESPACE SÉCURISÉ)
+      ============================================================ -->
+      <section class="app-screen" id="screen-profile">
+        <div class="desktop-page-header">
+          <div class="header-texts">
+            <h2>Espace Client & Profil Sécurisé</h2>
+            <p>Gérez vos informations personnelles, suivez vos demandes et contrôlez votre vérification d'identité.</p>
+          </div>
+        </div>
+
+        <div class="profile-desktop-two-col">
+          <!-- Left Sidebar -->
+          <aside class="profile-sidebar-column">
+            <div class="profile-card-desktop">
+              <div class="profile-avatar-large">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <h3 id="profileUserName">Kouassi A.</h3>
+              <p id="profileUserEmail">kouassi@email.com</p>
+              <span class="kyc-status-badge verified" id="profileKycBadge">Identité Vérifiée ✓</span>
+            </div>
+
+            <div class="profile-nav-menu">
+              <div class="profile-menu-item active" id="btnMenuInformations">
+                <div class="menu-item-left">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  <span>Mes informations</span>
+                </div>
+                <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </div>
+
+              <div class="profile-menu-item" id="btnMenuRequests">
+                <div class="menu-item-left">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                  <span>Mes demandes</span>
+                </div>
+                <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </div>
+
+              <div class="profile-menu-item" id="btnMenuKyc">
+                <div class="menu-item-left">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  <span>Vérification d'identité (KYC)</span>
+                </div>
+                <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </div>
+
+              <div class="profile-menu-item" id="btnMenuFavorites">
+                <div class="menu-item-left">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <span>Articles favoris</span>
+                </div>
+                <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </div>
+
+              <div class="profile-menu-item logout" id="btnMenuLogout">
+                <div class="menu-item-left">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                  <span>Déconnexion</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Right Content: Information Form & Requests -->
+          <div class="profile-main-pane">
+            <div class="profile-pane-card">
+              <div class="pane-card-header">
+                <h3>Informations du compte</h3>
+                <span style="font-size: 12px; color: var(--text-muted);">Compte vérifié actif</span>
+              </div>
+
+              <form id="formEditProfile">
+                <div class="form-row-2col">
+                  <div class="form-group">
+                    <label>Nom et Prénom *</label>
+                    <input type="text" class="form-control" name="name" id="editProfileName" value="Kouassi A." required>
+                  </div>
+                  <div class="form-group">
+                    <label>Numéro de Téléphone</label>
+                    <input type="tel" class="form-control" name="phoneNumber" id="editProfilePhone" value="+225 07 12 34 56 78">
+                  </div>
+                </div>
+
+                <div class="form-row-2col">
+                  <div class="form-group">
+                    <label>Adresse Email de contact</label>
+                    <input type="email" class="form-control" id="editProfileEmail" value="kouassi@email.com" disabled style="opacity: 0.7; cursor: not-allowed;">
+                  </div>
+                  <div class="form-group">
+                    <label>Langue préférée</label>
+                    <select class="form-control" name="languagePreference">
+                      <option value="fr" selected>Français (FR)</option>
+                      <option value="en">English (EN)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="pane-card-footer">
+                  <button type="submit" class="btn-gold-cta small">Enregistrer les modifications</button>
+                  <button type="button" class="btn-secondary-cta small" id="btnTriggerKycModal">Vérifier mon identité</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Requests Tracker Card -->
+            <div class="profile-pane-card" style="margin-top: 24px;">
+              <div class="pane-card-header">
+                <h3>Historique de mes demandes & transactions</h3>
+                <button class="btn-link-subtle" onclick="loadUserRequests()">Actualiser</button>
+              </div>
+              <div id="requestsListContainer" style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
+                <!-- Dynamically loaded -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SCREEN 8: PANNEAU D'ADMINISTRATION (ROLE ADMIN & SUPER_ADMIN)
+      ============================================================ -->
+      <section class="app-screen" id="screen-admin">
+        <div class="admin-header-bar">
+          <div class="admin-header-title">
+            <div class="brand-logo-icon" style="filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.5));">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="11" r="3"/></svg>
+            </div>
+            <div>
+              <h2 style="font-size: 22px; font-weight: 800; color: #FFFFFF;">Panneau d'Administration</h2>
+              <p style="font-size: 13px; color: var(--text-muted);">Supervision globale, gestion des utilisateurs, conformité KYC et demandes clients.</p>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span class="admin-tag-role" id="adminRoleDisplay">SUPER_ADMIN</span>
+            <button class="btn-action-sm" onclick="loadAdminDashboard()" title="Actualiser les données">🔄 Actualiser</button>
+          </div>
+        </div>
+
+        <!-- Admin Tabs Navigation -->
+        <div class="admin-tabs-nav" id="adminTabsNav">
+          <button class="admin-tab-btn active" data-admin-tab="tab-admin-overview">📊 Vue d'ensemble</button>
+          <button class="admin-tab-btn" data-admin-tab="tab-admin-users">👥 Utilisateurs</button>
+          <button class="admin-tab-btn" data-admin-tab="tab-admin-kyc">🛡️ Vérifications KYC <span id="adminKycBadgeCount" style="background: #EF4444; color: white; padding: 1px 6px; border-radius: 99px; font-size: 10px; margin-left: 4px;">1</span></button>
+          <button class="admin-tab-btn" data-admin-tab="tab-admin-requests">📋 Demandes Clients</button>
+        </div>
+
+        <!-- TAB 1: OVERVIEW & KPIS -->
+        <div class="admin-tab-content active" id="tab-admin-overview">
+          <div class="admin-kpi-grid">
+            <div class="admin-kpi-card">
+              <div class="admin-kpi-icon" style="background: rgba(59, 130, 246, 0.15); color: #60A5FA;">
+                👥
+              </div>
+              <div class="kpi-num" id="kpiUsersTotal">154</div>
+              <div class="kpi-label">Utilisateurs inscrits</div>
+            </div>
+            <div class="admin-kpi-card">
+              <div class="admin-kpi-icon" style="background: rgba(16, 185, 129, 0.15); color: #34D399;">
+                ✓
+              </div>
+              <div class="kpi-num" id="kpiUsersActive">148</div>
+              <div class="kpi-label">Comptes actifs</div>
+            </div>
+            <div class="admin-kpi-card">
+              <div class="admin-kpi-icon" style="background: rgba(245, 158, 11, 0.15); color: #FBBF24;">
+                ⏳
+              </div>
+              <div class="kpi-num" id="kpiKycPending" style="color: #FBBF24;">1</div>
+              <div class="kpi-label">Dossiers KYC en attente</div>
+            </div>
+            <div class="admin-kpi-card">
+              <div class="admin-kpi-icon" style="background: rgba(239, 68, 68, 0.15); color: #F87171;">
+                📨
+              </div>
+              <div class="kpi-num" id="kpiRequestsPending">3</div>
+              <div class="kpi-label">Demandes à traiter</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: USERS MANAGEMENT -->
+        <div class="admin-tab-content" id="tab-admin-users" style="display: none;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
+            <input type="text" id="adminUserSearchInput" placeholder="Rechercher par nom ou email..." class="form-control" style="max-width: 320px; font-size: 13px;">
+            <span style="font-size: 12px; color: var(--text-muted);" id="adminUserCountDisplay">Affichage des utilisateurs</span>
+          </div>
+          <div class="admin-table-container">
+            <table class="admin-data-table">
+              <thead>
+                <tr>
+                  <th>Nom & Email</th>
+                  <th>Téléphone</th>
+                  <th>Rôle</th>
+                  <th>Statut KYC</th>
+                  <th>Statut Compte</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="adminUsersTableBody">
+                <!-- Dynamically rendered -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB 3: KYC VERIFICATIONS -->
+        <div class="admin-tab-content" id="tab-admin-kyc" style="display: none;">
+          <div class="admin-table-container">
+            <table class="admin-data-table">
+              <thead>
+                <tr>
+                  <th>Utilisateur</th>
+                  <th>Type de Pièce</th>
+                  <th>Document</th>
+                  <th>Date Soumission</th>
+                  <th>Statut</th>
+                  <th>Décision</th>
+                </tr>
+              </thead>
+              <tbody id="adminKycTableBody">
+                <!-- Dynamically rendered -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB 4: CLIENT REQUESTS -->
+        <div class="admin-tab-content" id="tab-admin-requests" style="display: none;">
+          <div class="admin-table-container">
+            <table class="admin-data-table">
+              <thead>
+                <tr>
+                  <th>ID Demande</th>
+                  <th>Sujet & Détail</th>
+                  <th>Type</th>
+                  <th>Statut</th>
+                  <th>Date</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="adminRequestsTableBody">
+                <!-- Dynamically rendered -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </section>
+
+    </div><!-- /.desktop-container -->
+
+  </main>
+
+  <!-- ==================== MOBILE BOTTOM NAVIGATION BAR (SMARTPHONES ONLY) ==================== -->
+  <nav class="mobile-bottom-nav" id="phoneBottomNav">
+    <button class="nav-tab-btn active" data-tab="screen-landing" id="mobileTabHome">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>Accueil</span>
+    </button>
+    <button class="nav-tab-btn" data-tab="screen-services">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+      <span>Services</span>
+    </button>
+    <button class="nav-tab-btn" data-tab="screen-education">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>
+      <span>Éducation</span>
+    </button>
+    <button class="nav-tab-btn" data-tab="screen-contact">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span>Contact</span>
+    </button>
+    <button class="nav-tab-btn" data-tab="screen-profile" id="mobileTabProfile">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span>Profil</span>
+    </button>
+  </nav>
+
+  <!-- ============================================================
+       FORMULAIRES & MODALES (CONNEXION, INSCRIPTION, KYC, SERVICES)
+  ============================================================ -->
+
+  <!-- Modal 1: Formulaire de Connexion -->
+  <div class="app-modal-overlay" id="modalLogin">
+    <div class="modal-sheet">
+      <div class="sheet-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div class="brand-logo-icon" style="width: 28px; height: 28px;">
+            <svg viewBox="0 0 40 40" fill="none">
+              <polygon points="20,2 36,11 36,29 20,38 4,29 4,11" stroke="#FFB800" stroke-width="3" fill="rgba(255, 184, 0, 0.2)"/>
+              <path d="M26 15C24.5 13.5 22.5 13 20 13C15.5 13 13 16 13 20C13 24 15.5 27 20 27C22.5 27 24.5 26.5 26 25" stroke="#FFB800" stroke-width="3.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Connexion à CryptoConnect</h3>
+        </div>
+        <button class="btn-close-sheet" data-close-modal="modalLogin">✕</button>
+      </div>
+
+      <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">
+        Accédez à votre espace client sécurisé pour gérer vos investissements et services.
+      </p>
+
+      <form id="formLogin">
+        <div class="form-group">
+          <label>Adresse Email *</label>
+          <input type="email" class="form-control" name="email" id="loginEmailInput" value="kouassi@email.com" placeholder="nom@exemple.com" required>
+        </div>
+        <div class="form-group">
+          <label>Mot de passe *</label>
+          <input type="password" class="form-control" name="password" id="loginPasswordInput" value="Password123" placeholder="••••••••" required>
+        </div>
+
+        <button type="submit" class="btn-gold-cta large" style="width: 100%; margin-top: 10px;">
+          <span>Se connecter</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </form>
+
+      <!-- Quick Demo Login Buttons -->
+      <div style="background: rgba(255, 184, 0, 0.08); border: 1px dashed rgba(255, 184, 0, 0.3); border-radius: var(--radius-md); padding: 14px; margin-top: 16px; text-align: center;">
+        <span style="font-size: 12px; color: var(--primary-gold); font-weight: 700; display: block; margin-bottom: 8px;">💡 Accès Démo Instantané (Sans mot de passe)</span>
+        <div style="display: flex; gap: 8px; flex-direction: column;">
+          <button type="button" class="btn-secondary-cta small" id="btnQuickDemoLogin" style="width: 100%; justify-content: center; font-weight: 700;">
+            ⚡ Connexion Démo Client (Kouassi A.)
+          </button>
+          <button type="button" class="btn-secondary-cta small" id="btnQuickDemoAdmin" style="width: 100%; justify-content: center; font-weight: 700; border-color: rgba(239, 68, 68, 0.4); color: #F87171;">
+            👑 Connexion Super Administrateur
+          </button>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 20px;">
+        <span style="font-size: 13px; color: var(--text-muted);">Vous n'avez pas encore de compte ? </span>
+        <button class="btn-link-subtle" id="btnSwitchToRegister" style="padding: 0; font-size: 13px; color: var(--primary-gold); font-weight: 700;">
+          Créer un compte maintenant
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Formulaire d'Inscription -->
+  <div class="app-modal-overlay" id="modalRegister">
+    <div class="modal-sheet">
+      <div class="sheet-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div class="brand-logo-icon" style="width: 28px; height: 28px;">
+            <svg viewBox="0 0 40 40" fill="none">
+              <polygon points="20,2 36,11 36,29 20,38 4,29 4,11" stroke="#FFB800" stroke-width="3" fill="rgba(255, 184, 0, 0.2)"/>
+              <path d="M26 15C24.5 13.5 22.5 13 20 13C15.5 13 13 16 13 20C13 24 15.5 27 20 27C22.5 27 24.5 26.5 26 25" stroke="#FFB800" stroke-width="3.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Créer un compte CryptoConnect</h3>
+        </div>
+        <button class="btn-close-sheet" data-close-modal="modalRegister">✕</button>
+      </div>
+
+      <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">
+        Rejoignez la communauté et profitez de l'ensemble de nos services cryptos dès aujourd'hui.
+      </p>
+
+      <form id="formRegister">
+        <div class="form-group">
+          <label>Nom complet *</label>
+          <input type="text" class="form-control" name="name" placeholder="ex: Kouassi Armand" required>
+        </div>
+        <div class="form-group">
+          <label>Adresse Email *</label>
+          <input type="email" class="form-control" name="email" placeholder="nom@exemple.com" required>
+        </div>
+        <div class="form-group">
+          <label>Numéro de téléphone</label>
+          <input type="tel" class="form-control" name="phone" placeholder="+225 07 00 00 00">
+        </div>
+        <div class="form-group">
+          <label>Mot de passe (8+ caractères, au moins 1 chiffre) *</label>
+          <input type="password" class="form-control" name="password" placeholder="••••••••" required>
+        </div>
+
+        <button type="submit" class="btn-gold-cta large" style="width: 100%; margin-top: 10px;">
+          <span>Créer mon compte et accéder</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </form>
+
+      <div style="text-align: center; margin-top: 20px;">
+        <span style="font-size: 13px; color: var(--text-muted);">Vous avez déjà un compte ? </span>
+        <button class="btn-link-subtle" id="btnSwitchToLogin" style="padding: 0; font-size: 13px; color: var(--primary-gold); font-weight: 700;">
+          Se connecter
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Détail de Service -->
+  <div class="app-modal-overlay" id="modalServiceDetail">
+    <div class="modal-sheet">
+      <div class="sheet-header">
+        <h3 id="modalServiceTitle">Détail du service</h3>
+        <button class="btn-close-sheet" data-close-modal="modalServiceDetail">✕</button>
+      </div>
+      <p id="modalServiceDesc" style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;"></p>
+      
+      <div style="margin-bottom: 18px;">
+        <h4 style="font-size: 14px; color: var(--primary-gold); margin-bottom: 10px;">Avantages clés</h4>
+        <ul class="summary-list" id="modalServiceBenefits"></ul>
+      </div>
+
+      <div style="margin-bottom: 24px;">
+        <h4 style="font-size: 14px; color: var(--accent-cyan); margin-bottom: 10px;">Comment en bénéficier ?</h4>
+        <ol id="modalServiceSteps" style="padding-left: 20px; font-size: 13px; color: #CBD5E1; display: flex; flex-direction: column; gap: 8px;"></ol>
+      </div>
+
+      <button class="btn-gold-cta large" style="width: 100%;" id="btnServiceInquiry">Demander ce service</button>
+    </div>
+  </div>
+
+  <!-- Modal 4: KYC Identity Verification -->
+  <div class="app-modal-overlay" id="modalKyc">
+    <div class="modal-sheet">
+      <div class="sheet-header">
+        <h3>Vérification d'identité (KYC)</h3>
+        <button class="btn-close-sheet" data-close-modal="modalKyc">✕</button>
+      </div>
+      <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">
+        Conformément aux normes financières et pour débloquer les plafonds d'échange élevés, veuillez soumettre votre pièce d'identité officielle.
+      </p>
+      <form id="formKyc">
+        <div class="form-group">
+          <label>Type de document</label>
+          <select class="form-control" name="documentType">
+            <option value="national_id">Carte Nationale d'Identité (CNI)</option>
+            <option value="passport">Passeport biométrique</option>
+            <option value="driver_license">Permis de conduire</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Photo recto du document (JPEG, PNG ou PDF)</label>
+          <input type="file" class="form-control" accept="image/*,.pdf">
+        </div>
+        <div class="form-group">
+          <label>Photo verso du document (Optionnel)</label>
+          <input type="file" class="form-control" accept="image/*,.pdf">
+        </div>
+        <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: var(--radius-sm); padding: 12px; font-size: 12px; color: #34D399; margin-bottom: 16px;">
+          🔒 Transmission sécurisée par chiffrement cryptographique AES-256. Vos données restent strictement confidentielles.
+        </div>
+        <button type="submit" class="btn-gold-cta large" style="width: 100%;">Soumettre pour vérification</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript Application Controller -->
+  <script src="js/app.js"></script>
+</body>
+</html>
