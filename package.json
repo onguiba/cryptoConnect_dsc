@@ -2,9 +2,13 @@
   "name": "cryptoconnect-app",
   "version": "1.0.0",
   "description": "CryptoConnect - Application Mobile et Web de services & éducation crypto",
-  "main": "server/index.js",
+  "main": "app.js",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
   "scripts": {
-    "start": "node server/index.js",
+    "start": "node app.js",
     "dev": "nodemon server/index.js",
     "seed": "node server/seeds/seed.js"
   },
