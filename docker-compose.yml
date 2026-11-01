@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  cryptoconnect:
+    build: .
+    container_name: cryptoconnect_app
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - JWT_SECRET=cryptoconnect_super_secret_jwt_key_2026_prod
+      - JWT_REFRESH_SECRET=cryptoconnect_super_refresh_jwt_key_2026_prod
+      - APP_URL=http://localhost:3000
+    volumes:
+      - ./server/data:/usr/src/app/server/data
+      - ./uploads:/usr/src/app/uploads
+      - ./database.json:/usr/src/app/database.json
