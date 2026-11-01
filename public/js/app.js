@@ -45,6 +45,15 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Restaurer la session utilisateur sauvegardée si existante
   await checkExistingSession();
 
+  // Routage automatique vers l'écran ciblé (#admin, admin.html, etc.)
+  const targetScreen = sessionStorage.getItem('cc_target_screen');
+  if (targetScreen) {
+    sessionStorage.removeItem('cc_target_screen');
+    setTimeout(() => navigateToScreen(targetScreen), 100);
+  } else if (window.location.hash === '#admin' || window.location.pathname.endsWith('admin.html')) {
+    setTimeout(() => navigateToScreen('screen-admin'), 100);
+  }
+
   // Écouteur global pour actualiser les données
   loadUserRequests();
 });

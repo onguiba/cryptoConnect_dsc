@@ -10,12 +10,28 @@
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 
-# 2. INTÉGRATION PASSENGER / NODE.JS (SI ACTIF SUR HOSTINGER)
+# 2. INTÉGRATION PASSENGER / NODE.JS (SI ACTIF SUR HOSTINGER HPANEL)
 <IfModule mod_passenger.c>
     PassengerAppRoot "/"
     PassengerAppType node
     PassengerStartupFile app.js
     PassengerEnabled on
+</IfModule>
+
+# 2.bis ROUTAGE APACHE & PROXY INVERSE VERS LE BACKEND NODE.JS (PORT 3000)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Si mod_proxy est disponible, router les appels API vers Node.js
+    <IfModule mod_proxy.c>
+        RewriteRule ^api/(.*)$ http://127.0.0.1:3000/api/$1 [P,L]
+    </IfModule>
+
+    # Fallback SPA : rediriger les routes virtuelles vers index.html si le fichier n'existe pas
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !^/api
+    RewriteRule ^(.*)$ index.html [L]
 </IfModule>
 
 # 3. COMPRESSION GZIP & DEFLATE (POUR ACCÉLÉRER LE CHARGEMENT)

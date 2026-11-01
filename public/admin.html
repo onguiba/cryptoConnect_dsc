@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CryptoConnect Pro — Panneau d'Administration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    // Enregistre la cible écran administration et bascule sur l'interface
+    sessionStorage.setItem('cc_target_screen', 'screen-admin');
+    window.location.replace('/index.html#admin');
+  </script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0B0E14;
+      color: #FFFFFF;
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .loader-box {
+      background: rgba(22, 27, 34, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 35px 40px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      max-width: 420px;
+    }
+    .icon {
+      font-size: 42px;
+      margin-bottom: 15px;
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 800;
+      margin: 0 0 8px 0;
+    }
+    p {
+      color: #94A3B8;
+      font-size: 13.5px;
+      margin: 0 0 20px 0;
+      line-height: 1.5;
+    }
+    .btn-redirect {
+      display: inline-block;
+      padding: 10px 22px;
+      background: #FFB800;
+      color: #0B0E14;
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+    .btn-redirect:hover {
+      background: #FFA000;
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body>
+  <div class="loader-box">
+    <div class="icon">🛡️</div>
+    <h2>Panneau d'Administration</h2>
+    <p>Connexion et chargement sécurisé de l'espace supervision CryptoConnect Pro...</p>
+    <a href="/index.html#admin" class="btn-redirect">Accéder à l'Administration</a>
+  </div>
+</body>
+</html>

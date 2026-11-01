@@ -347,15 +347,19 @@ class DbStore {
         fs.mkdirSync(DATA_DIR, { recursive: true });
       }
 
+      const altFile = path.join(__dirname, '..', '..', 'database.json');
       if (fs.existsSync(DATA_FILE)) {
         const raw = fs.readFileSync(DATA_FILE, 'utf8');
+        this.data = JSON.parse(raw);
+      } else if (fs.existsSync(altFile)) {
+        const raw = fs.readFileSync(altFile, 'utf8');
         this.data = JSON.parse(raw);
       } else {
         this.data = getDefaultData();
         this.save();
       }
     } catch (err) {
-      console.warn('⚠️ Impossible de charger store.json, utilisation des données en mémoire:', err.message);
+      console.warn('⚠️ Impossible de charger store.json / database.json, utilisation des données en mémoire:', err.message);
       this.data = getDefaultData();
     }
   }
@@ -365,9 +369,14 @@ class DbStore {
       if (!fs.existsSync(DATA_DIR)) {
         fs.mkdirSync(DATA_DIR, { recursive: true });
       }
-      fs.writeFileSync(DATA_FILE, JSON.stringify(this.data, null, 2), 'utf8');
+      const jsonStr = JSON.stringify(this.data, null, 2);
+      fs.writeFileSync(DATA_FILE, jsonStr, 'utf8');
+
+      // Synchronisation miroir avec database.json à la racine
+      const altFile = path.join(__dirname, '..', '..', 'database.json');
+      fs.writeFileSync(altFile, jsonStr, 'utf8');
     } catch (err) {
-      console.error('❌ Erreur écriture store.json:', err.message);
+      console.error('❌ Erreur écriture store.json / database.json:', err.message);
     }
   }
 
