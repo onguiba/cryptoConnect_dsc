@@ -115,7 +115,7 @@ app.get('/api/company-info', (req, res) => {
       name: 'CryptoConnect Pro',
       tagline: 'La cryptomonnaie plus proche de vous — Simple, Sécurisée & Sans frontières',
       whatsappNumber: '+225 07 88 99 00 11',
-      phoneNumber: '+225 27 22 45 67 89',
+      phoneNumber: '+237696243890',
       email: 'contact@cryptoconnect.app',
       address: 'Abidjan Plateau, Tour Postel 2001, Côte d\'Ivoire',
       workingHours: 'Lundi - Samedi : 8h00 - 20h00 | Dimanche : 9h00 - 17h00 (GMT)',
